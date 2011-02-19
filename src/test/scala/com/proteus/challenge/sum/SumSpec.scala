@@ -1,13 +1,13 @@
-package group
+package com.proteus.challenge.sum
 
 import org.specs._
 import org.specs.runner.{ConsoleRunner, JUnit4}
 
-class MySpecTest extends JUnit4(MySpec)
+class SumSpecTest extends JUnit4(SumSpec)
 //class MySpecSuite extends ScalaTestSuite(MySpec)
-object MySpecRunner extends ConsoleRunner(MySpec)
+object SumSpecRunner extends ConsoleRunner(SumSpec)
 
-object MySpec extends Specification {
+object SumSpec extends Specification {
   "This wonderful system" should {
     "save the world" in {
       val list = Nil
