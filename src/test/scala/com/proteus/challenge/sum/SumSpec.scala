@@ -8,10 +8,9 @@ class SumSpecTest extends JUnit4(SumSpec)
 object SumSpecRunner extends ConsoleRunner(SumSpec)
 
 object SumSpec extends Specification {
-  "This wonderful system" should {
-    "save the world" in {
-      val list = Nil
-      list must beEmpty
+  "Summer" should {
+    "return 0 for 1" in { 
+      Summer.countSums(1) must_== 0
     }
   }
 }

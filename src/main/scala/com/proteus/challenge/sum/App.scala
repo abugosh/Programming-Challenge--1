@@ -8,3 +8,7 @@ object App extends Application {
   println( "Hello World!" )
 }
 
+object Summer {
+  def countSums(num : Int) = 0
+}
+
