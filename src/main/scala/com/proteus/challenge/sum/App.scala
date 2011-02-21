@@ -10,10 +10,28 @@ object App extends Application {
 
 object Summer {
   def combinationsFor(num : Int) = {
-    if (num == 1)
-      Nil
+    combinate(List(num - 1, 1))
+  }
+
+  def combinate(sum : List[Int]) : List[List[Int]] = {
+    println(sum)
+    if (sum.head < 1)
+      return List(Nil)
+
+    if (sum.head == 1)
+      return List(sum)
+    
+    if (sum.tail == Nil)
+      return sum :: combinate(sum.head - 1 :: 1 :: Nil)
+    
+    val ret = sum :: (for (x <- (1 to sum.head - 1).reverse
+         if (x > sum.tail.head))
+      yield combinate(sum.tail.head + 1 :: sum.tail.tail).map(x :: _)).flatten.toList
+    
+    if (sum.tail.head == 1)
+      ((1 to sum.head).map(x => 1).toList ::: sum.tail) :: ret
     else
-      List(1 :: 1 :: Nil)
+      ret
   }
 }
 
