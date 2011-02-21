@@ -9,20 +9,16 @@ object SumSpecRunner extends ConsoleRunner(SumSpec)
 
 object SumSpec extends Specification {
   "Summer" should {
-    "return 0 for 1" in { 
-      Summer.countSums(1) must_== 0
+    "return 0 for 1" in {
+      val sums = Summer.combinationsFor(1)
+
+      sums must_be Nil
     }
     
-    "return 1 for 2" in {
-      Summer.countSums(2) must_== 1
-    }
+    "return 1 for 2" 
 
-    "return 2 for 3" in {
-      Summer.countSums(3) must_== 2
-    }
+    "return 2 for 3" 
 
-    "return 4 for 4" in {
-      Summer.countSums(4) must_== 4
-    }
+    "return 4 for 4" 
   }
 }
