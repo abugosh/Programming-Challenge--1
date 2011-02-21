@@ -9,6 +9,6 @@ object App extends Application {
 }
 
 object Summer {
-  def countSums(num : Int) = 0
+  def countSums(num : Int) = num - 1
 }
 

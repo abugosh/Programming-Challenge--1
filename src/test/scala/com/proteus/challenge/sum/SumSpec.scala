@@ -12,5 +12,9 @@ object SumSpec extends Specification {
     "return 0 for 1" in { 
       Summer.countSums(1) must_== 0
     }
+    
+    "return 1 for 2" in {
+      Summer.countSums(2) must_== 1
+    }
   }
 }
