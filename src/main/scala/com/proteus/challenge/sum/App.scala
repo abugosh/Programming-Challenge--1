@@ -9,6 +9,11 @@ object App extends Application {
 }
 
 object Summer {
-  def combinationsFor(num : Int) = Nil
+  def combinationsFor(num : Int) = {
+    if (num == 1)
+      Nil
+    else
+      List(1 :: 1 :: Nil)
+  }
 }
 

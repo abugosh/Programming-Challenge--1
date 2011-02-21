@@ -12,13 +12,18 @@ object SumSpec extends Specification {
     "return 0 for 1" in {
       val sums = Summer.combinationsFor(1)
 
-      sums must_be Nil
+      sums must be(Nil)
     }
     
-    "return 1 for 2" 
+    "return 1 for 2" in {
+      val sums = Summer.combinationsFor(2)
 
-    "return 2 for 3" 
+      sums must have size(1)
+      sums must contain(1 :: 1 :: Nil)
+    }
 
-    "return 4 for 4" 
+    /*"return 2 for 3" 
+
+    "return 4 for 4" */
   }
 }
