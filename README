@@ -1,0 +1,16 @@
+This repository can be used to test Programming Challenge #1.
+
+You can test your solution using the command:
+
+mvn scala:run -DaddArgs="<path to executable>"
+
+If your program outputs in a format other than just the result on the last line you may provide a regular expression with a single match group using:
+
+mvn scala:run -DaddArgs="<path to executable>|--regex|Solution: (\d+)"
+
+TODO:
+
+* Interactive Mode
+* Providing a list of numbers to pretest
+* More Tests
+* More Comments (any comments)
