@@ -31,6 +31,11 @@
       <version>${scala.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.scala-lang</groupId>
+      <artifactId>scala-compiler</artifactId>
+      <version>${scala.version}</version>
+    </dependency>
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.5</version>
@@ -38,8 +43,8 @@
     </dependency>
     <dependency>
       <groupId>org.scala-tools.testing</groupId>
-      <artifactId>specs</artifactId>
-      <version>1.6.7</version>
+      <artifactId>specs_2.8.1</artifactId>
+      <version>1.6.7.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -63,11 +68,15 @@
           <scalaVersion>${scala.version}</scalaVersion>
           <args>
             <arg>-target:jvm-1.5</arg>
+            <arg>-usejavacp</arg>
           </args>
           <launchers>
             <launcher>
               <id>foo</id>
-              <mainClass>com.proteus.challenge.sum.App</mainClass>
+              <mainClass>com.proteus.challenge.sum.ChallengeTester</mainClass>
+<!--              <args>
+                <arg>src/test/resources/echoInput.sh</arg>
+              </args> -->
             </launcher>
           </launchers>
         </configuration>
