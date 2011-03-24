@@ -19,7 +19,7 @@ object ChallengeTester {
   }
 
   def runTests(tester : SolutionTester) = {
-    for (x <- 1 to 100)
+    for (x <- tests)
       tester.test(x)
 
     println(tester.resultsTable)
@@ -28,10 +28,16 @@ object ChallengeTester {
 
   var myRegex = ""
   var testFile = ""
-
+  var tests = (1 to 100).toArray
+  
   def processArgs(args : List[String]) : Boolean = args match {
     case "--regex" :: regex :: xs => {
       myRegex = regex
+      processArgs(xs)
+    }
+
+    case "--test" :: test :: xs => {
+      tests = test.split(",").map(_.toInt)
       processArgs(xs)
     }
     

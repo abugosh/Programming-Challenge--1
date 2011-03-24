@@ -8,9 +8,12 @@ If your program outputs in a format other than just the result on the last line 
 
 mvn scala:run -DaddArgs="<path to executable>|--regex|Solution: (\d+)"
 
+If you want to test a specific solution set you can run it with:
+
+mvn scala:run -DaddArgs="<path to executable>|--test|1,2,3,4,5,6,7,8,9"
+
 TODO:
 
 * Interactive Mode
-* Providing a list of numbers to pretest
 * More Tests
 * More Comments (any comments)
